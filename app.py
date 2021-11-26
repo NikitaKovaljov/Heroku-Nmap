@@ -19,7 +19,9 @@ def nmap():
             return "Problems with Request"
         else:
             
-            x = (type(nmap_host) + " " + type(nmap_args)
+            x = (type(nmap_host) + " " + type(nmap_args))
+
+            return x 
             """
             nmap = nmap3.Nmap()
             result = nmap.scan_top_ports(nmap_host, args=nmap_args)
