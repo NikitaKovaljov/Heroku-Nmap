@@ -1,6 +1,6 @@
 from flask import Flask,render_template, request
 import flask
-#import nmap
+import nmap
   
 app = Flask(__name__)
 
@@ -20,10 +20,13 @@ def nmap():
         if len(nmap_host) == 0:
             return "Problems with Request"
         else:
-            return all_together
+            #return all_together
 
-            #return nmap_request
-            nm.scan(hosts=ip)
+            nm = nmap.PortScanner()
+            result = nm.scan(hosts=nmap_host, arguments=nmap_args)
+            return result
+
+
     else:
         return render_template('/templates/nmap.html')
   
