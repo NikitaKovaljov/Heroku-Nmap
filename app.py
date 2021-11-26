@@ -1,6 +1,5 @@
 from flask import Flask,render_template, request
 import nmap3
-import platform
   
 app = Flask(__name__)
   
@@ -19,9 +18,10 @@ def nmap():
         if len(nmap_host) == 0:
             return "Problems with Request"
         else:
-            
-            result = platform.system()
-            return result
+            username = getpass.getuser()
+            local = os.getuid()
+            tut = username + " " + local 
+            return tut
             """
             nmap = nmap3.Nmap()
             result = nmap.scan_top_ports(nmap_host, args=nmap_args)
