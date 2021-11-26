@@ -12,8 +12,8 @@ def pages():
 @app.route('/nmap.html', methods = ['POST','GET'])
 def nmap():
     if request.method == "POST":
-        nmap_host = request.form.get("host")
-        nmap_args = request.form.get("args")
+        nmap_host = request.form("host")
+        nmap_args = request.form("args")
         if len(nmap_request) == 0:
             return "Problems with Request"
         else:
