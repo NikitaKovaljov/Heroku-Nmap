@@ -23,7 +23,7 @@ def nmap():
             #return all_together
 
             nm = nmap.PortScanner()
-            result = nm.scan(hosts=nmap_host, arguments=nmap_args)
+            #result = nm.scan(hosts=nmap_host, arguments=nmap_args)
             return all_together
     else:
         return render_template('/templates/nmap.html')
