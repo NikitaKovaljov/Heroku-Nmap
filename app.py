@@ -18,12 +18,14 @@ def nmap():
         if len(nmap_host) == 0:
             return "Problems with Request"
         else:
-            #return all_together
-
+            
+            x = (type(nmap_host) + " " + type(nmap_args)
+            """
             nmap = nmap3.Nmap()
-            result = nmap.scan_top_ports(hosts=nmap_host, arguments=nmap_args)
+            result = nmap.scan_top_ports(nmap_host, args=nmap_args)
             x = 1
             return x
+            """
     else:
         return render_template('/templates/nmap.html')
   
