@@ -13,11 +13,11 @@ def pages():
 def nmap():
     if request.method == "POST":
         nmap_host = request.form.get("host")
-        #nmap_args = request.form("args")
+        nmap_args = request.form.get("args")
         if len(nmap_host) == 0:
             return "Problems with Request"
         else:
-            return nmap_host
+            return nmap_host, nmap_args
 
             #return nmap_request
             nm.scan(hosts=ip)
