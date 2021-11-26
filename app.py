@@ -20,7 +20,7 @@ def nmap():
             return nmap_host
 
             #return nmap_request
-            #nm.scan(hosts=ip)
+            nm.scan(hosts=ip)
     else:
         return render_template('/templates/nmap.html')
   
