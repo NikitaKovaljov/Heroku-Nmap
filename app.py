@@ -13,7 +13,7 @@ def nmap():
         nmap_args = request.form.get("args")
         nmap_host = request.form.get("host")
 
-        all_together = (nmap_args + ' ' + nmap_host)
+        #all_together = (nmap_args + ' ' + nmap_host)
 
         if len(nmap_host) == 0:
             return "Problems with Request"
@@ -22,7 +22,8 @@ def nmap():
 
             nmap = nmap3.Nmap()
             result = nmap.scan_top_ports(hosts=nmap_host, arguments=nmap_args)
-            return result
+            x = 1
+            return x
     else:
         return render_template('/templates/nmap.html')
   
