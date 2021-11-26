@@ -15,7 +15,7 @@ def nmap():
         nmap_args = request.form.get("args")
         nmap_host = request.form.get("host")
 
-        all_together = (nmap_args, nmap_host)
+        all_together = (nmap_args + ' ' + nmap_host)
 
         if len(nmap_host) == 0:
             return "Problems with Request"
