@@ -7,7 +7,7 @@ app = Flask(__name__)
   
 @app.route("/")
 def pages():
-    return render_template('/templates/index')
+    return render_template('/templates/index.html')
 
 @app.route('/nmap.html', methods = ['POST','GET'])
 def nmap():
@@ -20,3 +20,5 @@ def nmap():
   
 if __name__ == "__main__":
   app.run()
+
+
