@@ -19,7 +19,7 @@ def nmap():
             return "Problems with Request"
         else:
             
-            x = (type(nmap_host) + " " + type(nmap_args))
+            x = (type(nmap_host))
 
             return x 
             """
