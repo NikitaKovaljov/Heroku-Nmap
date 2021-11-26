@@ -17,6 +17,8 @@ def nmap():
             return "Problems with Request"
         else:
             return nmap_request
+    else:
+        return render_template('/templates/nmap.html')
   
 if __name__ == "__main__":
   app.run()
