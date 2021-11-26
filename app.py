@@ -21,7 +21,7 @@ def nmap():
         else:
             nmap = nmap3.Nmap()
             result = nmap.scan_top_ports(nmap_host, args=nmap_args)
-            
+            return result
         
     else:
         return render_template('/templates/nmap.html')
