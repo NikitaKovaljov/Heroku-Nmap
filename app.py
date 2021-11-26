@@ -3,7 +3,6 @@ import flask
 import nmap
   
 app = Flask(__name__)
-
   
 @app.route("/")
 def pages():
