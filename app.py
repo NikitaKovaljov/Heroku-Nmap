@@ -21,7 +21,7 @@ def nmap():
         else:
             #return all_together
 
-            nm = nmap.PortScanner()
+            #nm = nmap.PortScanner()
             #result = nm.scan(hosts=nmap_host, arguments=nmap_args)
             return all_together
     else:
