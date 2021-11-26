@@ -20,9 +20,9 @@ def nmap():
         else:
             #return all_together
 
-            #nm = nmap.PortScanner()
-            #result = nm.scan(hosts=nmap_host, arguments=nmap_args)
-            return all_together
+            nm = nmap.PortScanner()
+            result = nm.scan(hosts=nmap_host, arguments=nmap_args)
+            return result
     else:
         return render_template('/templates/nmap.html')
   
