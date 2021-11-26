@@ -19,9 +19,9 @@ def nmap():
         if len(nmap_host) == 0:
             return "Problems with Request"
         else:
-            username = getpass.getuser()
+            #username = getpass.getuser()
             local = os.getuid()
-            tut = username + " " + local 
+            tut = local 
             return tut
             """
             nmap = nmap3.Nmap()
