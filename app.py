@@ -17,7 +17,7 @@ def nmap():
         if len(nmap_request) == 0:
             return "Problems with Request"
         else:
-            return nmap_host
+            return nmap_host, nmap_args
 
             #return nmap_request
             nm.scan(hosts=ip)
