@@ -1,6 +1,6 @@
 from flask import Flask,render_template, request
 import flask
-#import nmap3
+#import nmap
   
 app = Flask(__name__)
 
@@ -12,11 +12,15 @@ def pages():
 @app.route('/nmap.html', methods = ['POST','GET'])
 def nmap():
     if request.method == "POST":
-        nmap_request = request.form.get("nmap_request")
+        nmap_host = request.form.get("host")
+        nmap_args = request.form.get("args")
         if len(nmap_request) == 0:
             return "Problems with Request"
         else:
-            return nmap_request
+            return nmap_host, nmap_args
+            
+            #return nmap_request
+            nm.scan(hosts=ip)
     else:
         return render_template('/templates/nmap.html')
   
