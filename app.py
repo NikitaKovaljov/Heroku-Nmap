@@ -14,10 +14,13 @@ def nmap():
     if request.method == "POST":
         nmap_host = request.form.get("host")
         nmap_args = request.form.get("args")
+
+        all_together = [nmap_host, nmap_args]
+
         if len(nmap_host) == 0:
             return "Problems with Request"
         else:
-            return nmap_host
+            return all_together
 
             #return nmap_request
             nm.scan(hosts=ip)
