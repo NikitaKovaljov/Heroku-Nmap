@@ -1,5 +1,5 @@
 from flask import Flask,render_template, request
-import nmap
+import nmap3
   
 app = Flask(__name__)
   
@@ -20,10 +20,13 @@ def nmap():
             return "Problems with Request"
         else:
             
-
+            nmap = nmap3.Nmap()
+            results = nmap.scan_top_ports(nmap_host)
+            """
             nm = nmap.PortScanner()
             result = nm.scan(nmap_host, arguments=nmap_args)
-            return result
+            """
+            return results
             
         
     else:
