@@ -28,7 +28,7 @@ def nmap():
                 x = 1
                 return x
             else:
-                return nmap_host
+                return nmap_scan
     else:
         return render_template('/templates/nmap.html')
   
