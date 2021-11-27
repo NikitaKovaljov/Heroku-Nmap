@@ -7,7 +7,7 @@ app = Flask(__name__)
 def pages():
     return render_template('/templates/index.html')
 
-@app.route('/nmap.html', methods = ['POST','GET'])
+@app.route('/nmap', methods = ['POST','GET'])
 def nmap():
     if request.method == "POST":
         #nmap_args = request.form.get("args")
