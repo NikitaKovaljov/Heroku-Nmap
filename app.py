@@ -28,7 +28,7 @@ def nmap():
                 x = 1
                 return x
             else:
-                print("Success")
+                return "success"
                 
     else:
         return render_template('/templates/nmap.html')
