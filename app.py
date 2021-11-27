@@ -1,5 +1,5 @@
 from flask import Flask,render_template, request
-import nmap3
+import nmap
   
 app = Flask(__name__)
   
@@ -13,17 +13,18 @@ def nmap():
         #nmap_args = request.form.get("args")
         #nmap_host = request.form.get("host")
 
-        nmap_host = "10.9.104.240"
-        nmap_args = "-sV"
+        nmap_host = "scanme.nmap.org"
+        nmap_args = "-v"
 
         if len(nmap_host) == 0 and len(nmap_args) == 0:
             return "Problems with Request"
         else:
-            return nmap_host
-            """
-            nmap = nmap3.Nmap()
-            result = nmap.scan_top_ports(nmap_host, args=nmap_args)
-            """
+            
+
+            nm = nmap.PortScanner()
+            result = nm.scan(nmap_host, arguments=nmap_args)
+            return result
+            
         
     else:
         return render_template('/templates/nmap.html')
