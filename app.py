@@ -19,9 +19,11 @@ def nmap():
         if len(nmap_host) == 0 and len(nmap_args) == 0:
             return "Problems with Request"
         else:
+            return nmap_host
+            """
             nmap = nmap3.Nmap()
             result = nmap.scan_top_ports(nmap_host, args=nmap_args)
-            
+            """
         
     else:
         return render_template('/templates/nmap.html')
