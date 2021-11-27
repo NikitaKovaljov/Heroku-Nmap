@@ -1,5 +1,5 @@
 from flask import Flask,render_template, request
-import nmap3
+import os
   
 app = Flask(__name__)
   
@@ -19,16 +19,14 @@ def nmap():
         if len(nmap_host) == 0 and len(nmap_args) == 0:
             return "Problems with Request"
         else:
-            
-            nmap = nmap3.Nmap()
-            results = nmap.scan_top_ports(nmap_host)
-            """
-            nm = nmap.PortScanner()
-            result = nm.scan(nmap_host, arguments=nmap_args)
-            """
-            return results
-            
-        
+            path = "/app/nmap/bin/"
+            os.chdir(path)
+
+            nmap_scan = os.system("./nmap" + " " + nmap_args + " " + nmap_host)
+
+            if nmap_scan != 0:
+                x = 1
+                return x
     else:
         return render_template('/templates/nmap.html')
   
