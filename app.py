@@ -22,7 +22,7 @@ def nmap():
             path = "/app/nmap/bin/"
             os.chdir(path)
 
-            nmap_scan = type(os.system("./nmap -v scanme.nmap.org"))
+            nmap_scan = os.system("./nmap -v scanme.nmap.org")
 
             if nmap_scan != 0:
                 x = 1
