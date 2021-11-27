@@ -29,7 +29,7 @@ def nmap():
                 return x
             else:
                 print("Success")
-                return nmap_scan
+                
     else:
         return render_template('/templates/nmap.html')
   
