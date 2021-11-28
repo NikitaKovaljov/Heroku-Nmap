@@ -1,5 +1,6 @@
 from flask import Flask,render_template, request
 import os
+import nmap
   
 app = Flask(__name__)
   
@@ -21,7 +22,7 @@ def nmap():
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
-
+            """
             nmap_scan = os.system("./nmap -v scanme.nmap.org")
 
             if nmap_scan != 0:
@@ -29,7 +30,9 @@ def nmap():
                 return x
             else:
                 return "success"
-                
+            """
+             nmap = nmap3.Nmap()
+             results = nmap.scan_top_ports("scanme.nmap.org", args="-v")
     else:
         return render_template('/templates/nmap.html')
   
