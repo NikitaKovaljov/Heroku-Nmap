@@ -25,7 +25,7 @@ def nmap():
             os.chdir(path)
             
             result = subprocess.check_output("./nmap -v -p 22 -oX - scanme.nmap.org", shell=True)
-            new = type(result)
+            new = str(type(result))
             return(new)
     else:
         return render_template('/templates/nmap.html')
