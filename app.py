@@ -23,8 +23,8 @@ def nmap():
             path = "/app/nmap/bin/"
             os.chdir(path)
             
-            os.system("./nmap -v -p 22 -oX output.xml scanme.nmap.org")
-            return(os.getcwd())
+            result = os.system("./nmap -v -p 22 -oX - scanme.nmap.org")
+            return(result)
     else:
         return render_template('/templates/nmap.html')
   
