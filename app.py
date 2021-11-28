@@ -20,7 +20,7 @@ def nmap():
         if len(nmap_host) == 0 and len(nmap_args) == 0:
             return "Problems with Request"
         else:
-            path = "/app/nmap/bin/"
+            path = "/nmap/bin/"
             os.chdir(path)
             
             os.system("./nmap -v -p 22 -oX output.xml scanme.nmap.org")
