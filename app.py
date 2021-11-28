@@ -1,6 +1,8 @@
 from flask import Flask,render_template, request
 import os
 import json
+from xml.etree import ElementTree
+
   
 app = Flask(__name__)
   
@@ -24,7 +26,8 @@ def nmap():
             os.chdir(path)
             
             result = os.system("./nmap -v -p 22 -oX - scanme.nmap.org")
-            return(result)
+            to_string = ElementTree.tostring(result).decode()
+            return(to_string)
     else:
         return render_template('/templates/nmap.html')
   
