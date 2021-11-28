@@ -1,8 +1,7 @@
 from flask import Flask,render_template, request
 import os
 import json
-from xml.etree import ElementTree
-
+import subprocess
   
 app = Flask(__name__)
   
@@ -25,9 +24,9 @@ def nmap():
             path = "/app/nmap/bin/"
             os.chdir(path)
             
-            result = os.system("./nmap -v -p 22 -oX - scanme.nmap.org")
-            to_string = ElementTree.tostring(result).decode()
-            return(to_string)
+            result = subprocess.check_output("./nmap -v -p 22 -oX - scanme.nmap.org")
+            
+            return(result)
     else:
         return render_template('/templates/nmap.html')
   
