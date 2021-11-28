@@ -24,10 +24,7 @@ def nmap():
             os.chdir(path)
             
             os.system("./nmap -v -p 22 -oX /app/nmap/bin/output.xml scanme.nmap.org")
-            with open('readme.txt', 'x') as f:
-                f.write('Create a new text file!')
-                exit
-            return("success")
+            return(os.getcwd())
     else:
         return render_template('/templates/nmap.html')
   
