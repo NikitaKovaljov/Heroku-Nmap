@@ -31,10 +31,10 @@ def nmap():
             else:
                 return "success"
             """
-             nm = nmap.PortScanner()
-             r = nm.scan(hosts='scanme.nmap.org', arguments='-v')
+            nm = nmap.PortScanner()
+            r = nm.scan(hosts='scanme.nmap.org', arguments='-v')
 
-             return("success")
+            return("success")
     else:
         return render_template('/templates/nmap.html')
   
