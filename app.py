@@ -1,6 +1,6 @@
 from flask import Flask,render_template, request
 import os
-import nmap3
+import nmap
   
 app = Flask(__name__)
   
@@ -31,8 +31,10 @@ def nmap():
             else:
                 return "success"
             """
-             nmap = nmap3.Nmap()
-             results = nmap.scan_top_ports("scanme.nmap.org", args="-v")
+             nm = nmap.PortScanner()
+             r = nm.scan(hosts='scanme.nmap.org', arguments='-v')
+
+             return("success")
     else:
         return render_template('/templates/nmap.html')
   
