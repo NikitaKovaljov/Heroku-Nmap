@@ -24,8 +24,10 @@ def nmap():
             path = "/app/nmap/bin/"
             os.chdir(path)
             #subprocess.check_output, shell=True
-            result = os.system("./nmap -v -p 22 -oX - scanme.nmap.org")
-            return(result.text)
+            result = subprocess.Popen("./nmap -v -p 22 -oX - scanme.nmap.org", shell=True)
+            output = result.read()
+
+            return(output.decode())
             
     else:
         return render_template('/templates/nmap.html')
