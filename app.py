@@ -12,8 +12,8 @@ def pages():
 @app.route('/nmap', methods = ['POST','GET'])
 def nmap():
     if request.method == "POST":
-        #nmap_args = request.form.get("args")
-        #nmap_host = request.form.get("host")
+        nmap_args = request.form.get("args")
+        nmap_host = request.form.get("host")
 
         nmap_host = "scanme.nmap.org"
         nmap_args = "-v"
@@ -23,9 +23,7 @@ def nmap():
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
-            #subprocess.check_output, shell=True
-            return subprocess.check_output("./nmap -v -p 22 -oX output.xml scanme.nmap.org", shell=True)
-            #return(scan)
+            return subprocess.check_output("./nmap {nmap_args} -p 22 {nmap_host}", shell=True)
     else:
         return render_template('/templates/nmap.html')
   
