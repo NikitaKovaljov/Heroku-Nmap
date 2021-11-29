@@ -12,8 +12,8 @@ def pages():
 @app.route('/nmap', methods = ['POST','GET'])
 def nmap():
     if request.method == "POST":
-        nmap_args = request.form.get("args")
-        nmap_host = request.form.get("host")
+        #nmap_args = request.form.get("args")
+        #nmap_host = request.form.get("host")
 
         nmap_host = "scanme.nmap.org"
         nmap_args = "-v"
