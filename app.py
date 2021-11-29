@@ -23,7 +23,8 @@ def nmap():
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
-            return json.loads(json.dumps(subprocess.check_output(f"./nmap {nmap_args} {nmap_host}", shell=True).communicate()))
+            return subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True)
+            #return json.loads(json.dumps(subprocess.check_output(f"./nmap {nmap_args} {nmap_host}", shell=True).communicate()))
     else:
         return render_template('/templates/nmap.html')
   
