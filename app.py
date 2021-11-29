@@ -23,10 +23,13 @@ def nmap():
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
-            x = subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8")
+            x = subprocess.check_output(f"./nmap {nmap_args} {nmap_host}", shell=True).decode("utf8")
             d = json.dumps(x)
-            return(d)
-            #return json.loads(json.dumps(subprocess.check_output(f"./nmap {nmap_args} {nmap_host}", shell=True).communicate()))
+            y = json.loads(d)
+            
+            return(y)
+            # subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8") - kid
+            # return json.loads(json.dumps(subprocess.check_output(f"./nmap {nmap_args} {nmap_host}", shell=True).communicate())) - parent
     else:
         return render_template('/templates/nmap.html')
   
