@@ -23,8 +23,8 @@ def nmap():
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
-            
-            result = subprocess.check_output("./nmap -v -p 22 -oX - scanme.nmap.org", shell=True)
+            #subprocess.check_output
+            result = os.system("./nmap -v -p 22 -oX - scanme.nmap.org", shell=True)
             return(result.text)
             
     else:
