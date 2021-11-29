@@ -26,6 +26,7 @@ def nmap():
             
             result = subprocess.check_output("./nmap -v -p 22 -oX - scanme.nmap.org", shell=True)
             return("success")
+            print("<pre>" + result)
     else:
         return render_template('/templates/nmap.html')
   
