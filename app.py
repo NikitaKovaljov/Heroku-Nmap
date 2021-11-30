@@ -23,14 +23,9 @@ def nmap():
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
-            x = subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8")
-            with open('readme.txt', 'x') as f:
-                f.write('Create a new text file!')
-                
-            return(x)
-
-            # subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8") - kid
-            # return json.loads(json.dumps(subprocess.check_output(f"./nmap {nmap_args} {nmap_host}", shell=True).communicate())) - parent
+            x = subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True).decode("utf8")
+            #return(x)
+            return render_template("/app/nmap/bin/output.xml")
     else:
         return render_template('/templates/nmap.html', PageTitle= "NMAP")
   
