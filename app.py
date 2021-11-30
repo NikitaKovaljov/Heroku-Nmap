@@ -20,8 +20,8 @@ def nmap():
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
-            x = subprocess.check_output(f"./nmap {nmap_args} -oX /app/templates/templates/output.xml {nmap_host}", shell=True).decode("utf8")
-            test = os.path.exists("./app/templates/templates/output.xml")
+            x = subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True).decode("utf8")
+            test = os.path.exists("./output.xml")
             #w = os.path.abspath("./hui.xml")
             print(test)
             return("ok")
