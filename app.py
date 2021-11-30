@@ -28,7 +28,8 @@ def nmap():
             test = os.path.exists("./output.xml")
             #w = os.path.abspath("./hui.xml")
             print(test)
-            return render_template("output.xml")
+            
+            return("ok")
     else:
         return render_template('/templates/nmap.html', PageTitle= "NMAP")
   
