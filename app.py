@@ -27,7 +27,9 @@ def nmap():
             os.chdir(path1)
             test = os.path.exists("./output.xml")
             #w = os.path.abspath("./hui.xml")
-            print(test)
+            os.system("xsltproc output.xml -o new.html")
+            lets = os.path.exists("./new.html")
+            print(lets)
             
             return("ok")
     else:
