@@ -26,8 +26,7 @@ def nmap():
             x = subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8")
             path1 = "/tmp"
             os.chdir(path1)
-            y = os.getcwd()
-            return(y)
+            os.system("touch test.xml")
             return(x)
 
             # subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8") - kid
