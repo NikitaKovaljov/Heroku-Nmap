@@ -24,8 +24,10 @@ def nmap():
             path = "/app/nmap/bin/"
             os.chdir(path)
             x = subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8")
-            path = "~/tmp/"
-            return(path)
+            path1 = "~/tmp/"
+            os.chdir(path1)
+            y = os.getcwd()
+            return(y)
             return(x)
 
             # subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8") - kid
