@@ -21,6 +21,9 @@ def nmap():
             path = "/app/nmap/bin/"
             os.chdir(path)
             x = subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True).decode("utf8")
+            shutil.move("output.xml", "/app/templates/templates/")
+            path1 = "/app/templates/templates/"
+            os.chdir(path1)
             test = os.path.exists("./output.xml")
             #w = os.path.abspath("./hui.xml")
             print(test)
