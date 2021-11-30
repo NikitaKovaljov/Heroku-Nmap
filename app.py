@@ -15,19 +15,14 @@ def nmap():
         nmap_args = request.form.get("args")
         nmap_host = request.form.get("host")
 
-        #nmap_host = "scanme.nmap.org"
-        #nmap_args = "-v"
-
         if len(nmap_host) == 0 and len(nmap_args) == 0:
             return "Problems with Request"
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
             x = subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True).decode("utf8")
-            #return(x)
-            test = os.path.exists("./output.xml")
-            print(test)
-            return(x)
+            #test = os.path.exists("./output.xml")
+            return render_template("./output.xml")
     else:
         return render_template('/templates/nmap.html', PageTitle= "NMAP")
   
