@@ -7,7 +7,7 @@ app = Flask(__name__)
   
 @app.route("/")
 def pages():
-    return render_template('/templates/index.html')
+    return render_template('/templates/index.html', PageTitle= "Tools")
 
 @app.route('/nmap', methods = ['POST','GET'])
 def nmap():
@@ -30,7 +30,7 @@ def nmap():
             # subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8") - kid
             # return json.loads(json.dumps(subprocess.check_output(f"./nmap {nmap_args} {nmap_host}", shell=True).communicate())) - parent
     else:
-        return render_template('/templates/nmap.html')
+        return render_template('/templates/nmap.html', PageTitle= "NMAP")
   
 if __name__ == "__main__":
   app.run()
