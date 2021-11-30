@@ -25,7 +25,8 @@ def nmap():
             os.chdir(path)
             x = subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True).decode("utf8")
             #return(x)
-            return render_template("/app/nmap/bin/output.xml")
+            test = os.path.exists("./output.xml")
+            return(test)
     else:
         return render_template('/templates/nmap.html', PageTitle= "NMAP")
   
