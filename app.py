@@ -25,7 +25,7 @@ def nmap():
             os.chdir(path)
             x = subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8")
 
-            return(x[1])
+            return(x)
 
             # subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8") - kid
             # return json.loads(json.dumps(subprocess.check_output(f"./nmap {nmap_args} {nmap_host}", shell=True).communicate())) - parent
