@@ -23,7 +23,8 @@ def nmap():
             x = subprocess.check_output(f"./nmap {nmap_args} -oX /app/templates/templates/output.xml {nmap_host}", shell=True).decode("utf8")
             test = os.path.exists("./ebat.xml")
             #w = os.path.abspath("./hui.xml")
-            return(test)
+            print(test)
+            return 0
     else:
         return render_template('/templates/nmap.html', PageTitle= "NMAP")
   
