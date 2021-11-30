@@ -20,10 +20,10 @@ def nmap():
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
-            x = subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True).decode("utf8")
+            x = subprocess.check_output(f"./nmap {nmap_args} -oX /app/templates/templates/output.xml {nmap_host}", shell=True).decode("utf8")
             #test = os.path.exists("./output.xml")
-            return("/app/nmap/bin/output.xml")
             #y = os.path.abspath("./output.xml")
+            return render_template("/app/templates/templates/output.xml")
             #return(y)
     else:
         return render_template('/templates/nmap.html', PageTitle= "NMAP")
