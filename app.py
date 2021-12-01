@@ -22,16 +22,17 @@ def nmap():
             path = "/app/nmap/bin/"
             os.chdir(path)
             #x = subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8")
-            subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True)      
+            subprocess.check_output(f"./nmap {nmap_args} -oX output.xml --stylesheet https://svn.nmap.org/nmap/docs/nmap.xsl {nmap_host}", shell=True)      
             shutil.move("output.xml", "/app/templates/templates/")
             path1 = "/app/templates/templates/"
             os.chdir(path1)
             test = os.path.exists("./output.xml")
             ### Code above working, file is creating ###
             ### Code below is trying to convert .xml to html file ###
-            os.system("xsltproc nmap.xsl output.xml -o new.html")
+            os.system("xsltproc output.xml -o new.html")
             lets = os.path.exists("./new.html")
-            print(test)
+            print("output.xml" + test)
+            print("new.html" + lets)
             return("ok")
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
