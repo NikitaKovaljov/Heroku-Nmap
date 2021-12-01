@@ -23,7 +23,7 @@ def nmap():
             os.chdir(path)
             x = subprocess.check_output(f"./nmap {nmap_args} -oX - {nmap_host}", shell=True).decode("utf8")
             #subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True)
-            print(x)
+            """
             shutil.move("output.xml", "/app/templates/templates/")
             path1 = "/app/templates/templates/"
             os.chdir(path1)
@@ -36,6 +36,8 @@ def nmap():
             x = os.system("file output.xml")
             print(x)
             return("ok")
+            """
+            return(x)
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
   
