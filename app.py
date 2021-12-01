@@ -32,7 +32,8 @@ def nmap():
             #os.system("xsltproc output.xml -o new.html")
             #lets = os.path.exists("./new.html")
             print(test)
-            
+            x = os.system("file output.xml")
+            print(x)
             return("ok")
     else:
         return render_template('/templates/nmap.html', PageTitle= "NMAP")
