@@ -21,12 +21,14 @@ def nmap():
         else:
             path = "/app/nmap/bin/"
             os.chdir(path)
-            x = subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True).decode("utf8")
+            #x = subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True).decode("utf8")
+            subprocess.check_output(f"./nmap {nmap_args} -oX output.xml {nmap_host}", shell=True)
             shutil.move("output.xml", "/app/templates/templates/")
             path1 = "/app/templates/templates/"
             os.chdir(path1)
             test = os.path.exists("./output.xml")
-            #w = os.path.abspath("./hui.xml")
+            ### Code above working, file is creating ###
+            ### Code below is trying to convert .xml to html file ###
             os.system("xsltproc output.xml -o new.html")
             lets = os.path.exists("./new.html")
             print(lets)
