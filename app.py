@@ -31,7 +31,7 @@ def nmap():
             os.chdir(path1)
             test1 = os.path.exists("./new.html")
             print(test1)
-            return make_response(render_template("new.html"))
+            return make_response(render_template("./new.html"))
             """
             path1 = "/app/templates/templates/"
             os.chdir(path1)
