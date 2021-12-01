@@ -29,7 +29,7 @@ def nmap():
             test = os.path.exists("./output.xml")
             ### Code above working, file is creating ###
             ### Code below is trying to convert .xml to html file ###
-            subprocess.check_output("xsltproc output.xml -o new.html",shell=True)
+            os.system("xsltproc output.xml -o new.html")
             lets = os.path.exists("./new.html")
             print(test)
             return("ok")
