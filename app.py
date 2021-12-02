@@ -26,6 +26,7 @@ def nmap():
             global new_file_name
         except:
             return("Something wrong in start block")
+
         if len(nmap_host) == 0 and len(nmap_args) == 0:
             return "Problems in inputs"
         else:
@@ -37,7 +38,10 @@ def nmap():
             if os.path.exists(f"output{file_name}.xml"):
                 pass
             else:
-                subprocess.check_output(f"./nmap {nmap_args} -oX output{file_name}.xml --stylesheet nmap.xsl {nmap_host}", shell=True)
+                try:
+                    subprocess.check_output(f"./nmap {nmap_args} -oX output{file_name}.xml --stylesheet nmap.xsl {nmap_host}", shell=True)
+                except subprocess.CalledProcessError:
+                    return("Sudo args is not allowed")
             if os.path.exists(f"new{new_file_name}.html"):
                 pass
             else:
