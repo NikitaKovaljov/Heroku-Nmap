@@ -31,7 +31,7 @@ def nmap():
             os.chdir(path1)
             #test1 = os.path.exists("./new.html")
             #print(test1)
-            return render_template('new.html')
+            return render_template('app/templates/templates/new.html')
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
   
