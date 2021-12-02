@@ -16,12 +16,13 @@ def pages():
 
 @app.route('/nmap', methods = ['POST','GET'])
 def nmap():
-    
     if request.method == "POST":
         nmap_args = request.form.get("args")
         nmap_host = request.form.get("host")
         path = "/app/nmap/bin/"
         path1 = "/app/templates/templates/"
+        global file_name
+        global new_file_name
 
         if len(nmap_host) == 0 and len(nmap_args) == 0:
             return "Problems with Request"
@@ -43,7 +44,6 @@ def nmap():
                 pass
             else:
                 shutil.move(f"new{new_file_name}.html", "/app/templates/templates/")
-                
             os.chdir(path1)
             final = new_file_name
             file_name += 1
