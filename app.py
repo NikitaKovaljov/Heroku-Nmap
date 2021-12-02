@@ -7,9 +7,6 @@ import shutil
   
 app = Flask(__name__)
 
-file_name = 1
-new_file_name = 1
-
 @app.route("/")
 def pages():
     return render_template('/templates/index.html', PageTitle = "Tools")
@@ -54,6 +51,8 @@ def nmap():
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
   
 if __name__ == "__main__":
+  file_name = 1
+  new_file_name = 1
   app.run()
 
 
