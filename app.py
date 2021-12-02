@@ -32,7 +32,7 @@ def nmap():
             #test1 = os.path.exists("./new.html")
             #print(test1)
             #return render_template('app/templates/templates/new.html')
-            return send_file('app/templates/templates/new.html')
+            return send_file('/templates/templates/new.html')
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
   
