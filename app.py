@@ -4,7 +4,11 @@ import os
 import json
 import subprocess
 import shutil
-  
+
+
+file_name = 1
+new_file_name = 1
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -51,8 +55,6 @@ def nmap():
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
   
 if __name__ == "__main__":
-  file_name = 1
-  new_file_name = 1
-  app.run()
+    app.run()
 
 
