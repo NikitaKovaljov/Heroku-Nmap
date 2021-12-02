@@ -5,7 +5,6 @@ import json
 import subprocess
 import shutil
 
-
 file_name = 1
 new_file_name = 1
 
@@ -45,12 +44,16 @@ def nmap():
                 pass
             else:
                 shutil.move(f"new{new_file_name}.html", "/app/templates/templates/")
-            os.chdir(path1)
-            final = new_file_name
-            file_name += 1
-            new_file_name += 1
-            print(file_name)
-            return send_from_directory('/app/templates/templates',f'new{final}.html')
+            try:
+                os.chdir(path1)
+                final = new_file_name
+                file_name += 1
+                new_file_name += 1
+                print(file_name)
+            except:
+                return("something went wrong in counter block")
+            finally:
+                return send_from_directory('/app/templates/templates',f'new{final}.html')
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
   
