@@ -48,7 +48,7 @@ def nmap():
             final = new_file_name
             file_name += 1
             new_file_name += 1
-            #print(file_name)
+            print(file_name)
             return send_from_directory('/app/templates/templates',f'new{final}.html')
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
