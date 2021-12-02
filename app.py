@@ -45,6 +45,7 @@ def nmap():
             final = new_file_name
             new_file_name += 1
             file_name += 1
+            print(file_name)
             return send_from_directory('/app/templates/templates',f'new{final}.html')
 
     else:
