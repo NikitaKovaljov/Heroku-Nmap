@@ -58,8 +58,7 @@ def nmap():
                 print(file_name)
             except:
                 return("something went wrong in counter block")
-            finally:
-                return send_from_directory('/app/templates/templates',f'new{final}.html')
+            return send_from_directory('/app/templates/templates',f'new{final}.html')
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
   
