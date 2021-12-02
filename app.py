@@ -17,15 +17,17 @@ def pages():
 @app.route('/nmap', methods = ['POST','GET'])
 def nmap():
     if request.method == "POST":
-        nmap_args = request.form.get("args")
-        nmap_host = request.form.get("host")
-        path = "/app/nmap/bin/"
-        path1 = "/app/templates/templates/"
-        global file_name
-        global new_file_name
-
+        try:
+            nmap_args = request.form.get("args")
+            nmap_host = request.form.get("host")
+            path = "/app/nmap/bin/"
+            path1 = "/app/templates/templates/"
+            global file_name
+            global new_file_name
+        except:
+            return("Something wrong in start block")
         if len(nmap_host) == 0 and len(nmap_args) == 0:
-            return "Problems with Request"
+            return "Problems in inputs"
         else:
             os.chdir(path)
             if os.path.exists("nmap.xsl"):
