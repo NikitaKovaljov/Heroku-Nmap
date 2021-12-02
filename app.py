@@ -23,17 +23,10 @@ def nmap():
             os.chdir(path)
             os.system("wget https://svn.nmap.org/nmap/docs/nmap.xsl")
             subprocess.check_output(f"./nmap {nmap_args} -oX output.xml --stylesheet nmap.xsl {nmap_host}", shell=True)
-            #test = os.path.exists("./output.xml") 
-            #print(test)
             os.system("xsltproc output.xml -o new.html")     
             shutil.move("new.html", "/app/templates/templates/")
             path1 = "/app/templates/templates/"
             os.chdir(path1)
-            
-            
-            #test1 = os.path.exists("./new.html")
-            #print(test1)
-            #return render_template('app/templates/templates/new.html')
             return send_from_directory('/app/templates/templates','new.html')
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
