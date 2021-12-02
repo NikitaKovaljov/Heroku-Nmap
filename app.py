@@ -1,4 +1,4 @@
-from flask import Flask,render_template, request
+from flask import Flask,render_template, request, send_file
 import os
 import json
 import subprocess
@@ -31,7 +31,8 @@ def nmap():
             os.chdir(path1)
             #test1 = os.path.exists("./new.html")
             #print(test1)
-            return render_template('app/templates/templates/new.html')
+            #return render_template('app/templates/templates/new.html')
+            return send_file('app/templates/templates/new.html')
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
   
