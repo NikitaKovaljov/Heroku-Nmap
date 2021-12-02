@@ -18,8 +18,8 @@ def nmap():
         nmap_host = request.form.get("host")
         path = "/app/nmap/bin/"
         path1 = "/app/templates/templates/"
-        file_name = 1
-        new_file_name = 1
+        file_name +=1
+        new_file_name +=1
 
         if len(nmap_host) == 0 and len(nmap_args) == 0:
             return "Problems with Request"
@@ -43,8 +43,6 @@ def nmap():
                 shutil.move(f"new{new_file_name}.html", "/app/templates/templates/")
             os.chdir(path1)
             final = new_file_name
-            new_file_name += 1
-            file_name += 1
             print(file_name)
             return send_from_directory('/app/templates/templates',f'new{final}.html')
 
