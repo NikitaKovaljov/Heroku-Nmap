@@ -29,13 +29,12 @@ def nmap():
             shutil.move("new.html", "/app/templates/templates/")
             path1 = "/app/templates/templates/"
             os.chdir(path1)
-            x = os.path.dirname(os.path.abspath('new.html'))
-            print(x)
-            return(x)
+            
+            
             #test1 = os.path.exists("./new.html")
             #print(test1)
             #return render_template('app/templates/templates/new.html')
-            #return send_from_directory(,'new.html')
+            return send_from_directory('/app/templates/templates','new.html')
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
   
