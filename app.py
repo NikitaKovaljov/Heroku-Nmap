@@ -25,7 +25,7 @@ def nmap():
         except:
             return("Something wrong in start block")
         if len(nmap_host) == 0 or nmap_host.count(" ") > 0 and len(nmap_args) == 0 or nmap_args.count(" ") > 0:
-            return "Problems in inputs"
+            return "Problems with inputs"
         else:
             os.chdir(path)
             if os.path.exists("nmap.xsl"):
