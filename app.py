@@ -25,7 +25,7 @@ def nmap():
             global new_file_name
         except:
             return("Something wrong in start block")
-        if len(nmap_host) == 0 and len(nmap_args) == 0:
+        if len(nmap_host) == 0 or nmap_host == "" and len(nmap_args) == 0 or nmap_args == "":
             return "Problems in inputs"
         else:
             os.chdir(path)
@@ -50,12 +50,12 @@ def nmap():
                 shutil.move(f"new{new_file_name}.html", "/app/templates/templates/")
             try:
                 os.chdir(path1)
-                final = new_file_name
+                final_name = new_file_name
                 file_name += 1
                 new_file_name += 1
             except:
                 return("something went wrong in counter block")
-            return send_from_directory('/app/templates/templates',f'new{final}.html')
+            return send_from_directory('/app/templates/templates',f'new{final_name}.html')
     else:
         return render_template('/templates/nmap.html', PageTitle = "NMAP")
 if __name__ == "__main__":
