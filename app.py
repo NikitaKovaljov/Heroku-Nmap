@@ -24,7 +24,7 @@ def nmap():
             global new_file_name
         except:
             return("Something wrong in start block")
-        if len(nmap_host) == 0 or nmap_host.count(" ") > 0 and len(nmap_args) == 0 or nmap_args.count(" ") > 0:
+        if len(nmap_host) == 0 and len(nmap_args) == 0:
             return "Problems with inputs"
         else:
             os.chdir(path)
