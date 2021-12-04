@@ -25,7 +25,7 @@ and integrate systems more effectively.
 ## Installation
 
 #### Git clone
- - Clone code from git repository
+ - Clone project from git repository
 ```bash
 git clone https://github.com/NikitaKovaljov/Heroku-Nmap.git
 ```
