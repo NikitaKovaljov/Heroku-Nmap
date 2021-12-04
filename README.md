@@ -18,6 +18,10 @@ Heroku nmap deployed with a following tools:
 - [Python] - Python is a programming language that lets you work quickly
 and integrate systems more effectively.
 
+- [xsltproc] - Command line tool for applying XSLT stylesheets to XML documents.
+
+- [nmap] - free and open source utility for network discovery and security auditing.
+
 ## Installation
 
 #### Git clone
@@ -93,6 +97,8 @@ MIT
 
    [flask]: <https://palletsprojects.com/p/flask/>
    [Python]: <https://www.python.org/>
+   [xsltproc]: <https://linux.die.net/man/1/xsltproc>
+   [nmap]: <https://nmap.org/>
    [Heroku]: <https://www.heroku.com/what>
    [filesystem]: <https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem>
 
