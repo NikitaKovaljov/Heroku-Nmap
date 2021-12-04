@@ -88,6 +88,16 @@ git push heroku master
 ```
 - Now everything is ready for usage, welcome :)
 
+## POC 
+> index.html page, button redirects to /nmap form 
+![](https://github.com/NikitaKovaljov/Heroku-Nmap/blob/main/POC/index.png?raw=true)
+
+> /nmap form, which sends params to our script
+![](https://github.com/NikitaKovaljov/Heroku-Nmap/blob/main/POC/:nmap.png?raw=true)
+
+> output from our requrest as html report
+![](https://github.com/NikitaKovaljov/Heroku-Nmap/blob/main/POC/result.png?raw=true)
+
 ## Limitations
 
 - Heroku using containers to build apps, thus using sudo arguments for nmap is not allowed, but you always can try to escalate privileges and get root shell. 
