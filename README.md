@@ -103,7 +103,8 @@ git push heroku master
 
 ## Limitations
 
-- Heroku using containers to build apps, thus using sudo arguments for nmap is not allowed, but you always can try to escalate privileges and get root shell. 
+- Heroku using containers to build apps, thus using sudo arguments for nmap is not allowed.
+- As an option, you can use this link to "fake sudo" [FAKESUDO], but I didnt test it. 
 
 ## License
 MIT
@@ -114,4 +115,5 @@ MIT
    [nmap]: <https://nmap.org/>
    [Heroku]: <https://www.heroku.com/what>
    [filesystem]: <https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem>
+   [FAKESUDO]: <https://elements.heroku.com/buildpacks/xenontheinertg/sudo-mask>
 
