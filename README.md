@@ -98,7 +98,7 @@ git push heroku master
 > /nmap form, which sends params to our script
 ![](https://github.com/NikitaKovaljov/Heroku-Nmap/blob/main/POC/:nmap.png?raw=true)
 
-> output from our requrest as html report
+> response from our scan as html report
 ![](https://github.com/NikitaKovaljov/Heroku-Nmap/blob/main/POC/result.png?raw=true)
 
 ## Limitations
